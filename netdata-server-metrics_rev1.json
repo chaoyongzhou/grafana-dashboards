@@ -83,7 +83,46 @@
     ]
   },
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allFormat": "glob",
+        "current": {
+          "value": "${VAR_PREFIX}",
+          "text": "${VAR_PREFIX}"
+        },
+        "datasource": null,
+        "hide": 2,
+        "includeAll": false,
+        "multi": false,
+        "multiFormat": "glob",
+        "name": "prefix",
+        "options": [
+          {
+            "value": "${VAR_PREFIX}",
+            "text": "${VAR_PREFIX}"
+          }
+        ],
+        "query": "${VAR_PREFIX}",
+        "refresh": 0,
+        "refresh_on_load": false,
+        "type": "constant"
+      },
+      {
+        "allFormat": "glob",
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "multiFormat": "glob",
+        "name": "server",
+        "options": [],
+        "query": "$prefix.*",
+        "refresh": 1,
+        "refresh_on_load": false,
+        "type": "query"
+      }
+    ]
   },
   "annotations": {
     "list": []
